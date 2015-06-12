@@ -1,0 +1,7 @@
+body > .content .submission { margin-bottom: 20px; }
+body > .content .submission h2,
+body > .content .submission h3 { font-weight: normal; margin: 0; padding: 0; }
+body > .content .submission .email a { color: #3f51b5; text-decoration: none; }
+
+.question { color: #999; font-size: 0.8em; margin: 20px 0 5px; }
+.answer { margin: 0; }

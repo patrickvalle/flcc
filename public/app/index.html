@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>flcc</title>
+    <meta name="author" content="Patrick Valle">
+    <meta name="viewport" content="width=device-width">
+    <!-- styles -->
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="stylesheet" href="assets/styles/index.css">
+    <!-- webcomponent imports -->
+    <link rel="import" href="assets/bower_components/polymer/polymer.html">
+    <link rel="import" href="assets/bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="assets/bower_components/paper-button/paper-button.html">
+    <link rel="import" href="assets/bower_components/paper-input/paper-input.html">
+    <link rel="import" href="assets/bower_components/paper-input/paper-textarea.html">
+    <link rel="import" href="assets/bower_components/paper-material/paper-material.html">
+    <link rel="import" href="assets/bower_components/paper-progress/paper-progress.html">
+    <link rel="import" href="assets/bower_components/paper-styles/paper-styles.html">
+    <link rel="import" href="assets/bower_components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="assets/bower_components/paper-toast/paper-toast.html">
+    <link rel="import" href="assets/bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="assets/components/flcc-header/flcc-header.html">
+    <link rel="import" href="assets/components/flcc-input/flcc-input.html">
+    <link rel="import" href="assets/components/flcc-textarea/flcc-textarea.html">
+    <!-- webcomponents shim -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.3/webcomponents.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body unresolved>
+    <!-- header -->
+    <flcc-header tab-selected="0"></flcc-header>
+    <!-- content -->
+    <div class="content">
+      <paper-material elevation="1" class="container">
+        <form id="hey">
+          <!-- first name -->
+          <flcc-input name="name[first]" label="First Name" required="true" value="test"></flcc-input>
+          <!-- last name -->
+          <flcc-input name="name[last]" label="Last Name" required="true"></flcc-input>
+          <!-- email -->
+          <flcc-input name="email" label="Email" required="true"></flcc-input>
+          <!-- question 1. -->
+          <flcc-textarea name="answers[one]" label="What's the coolest problem you've solved that's applicable to the role you'd like to have with FoodLogiQ? Why should we think it's cool, too?"></flcc-textarea>
+          <!-- question 2. -->
+          <flcc-textarea name="answers[two]" label="Describe the environment that would exist at your dream job. The culture, people, office, tools, etc. - whatever details you think would make it awesome. Don't worry about trying to describe us so we think you think we're your dream employer: we're more interested in you, not us."></flcc-textarea>
+          <!-- question 3. -->
+          <flcc-textarea name="answers[three]" label="What design and development assumptions and decisions went into your solution from the first question?"></flcc-textarea>
+          <!-- buttons -->
+          <div class="buttons">
+            <paper-button type="submit">
+              <iron-icon icon="done"></iron-icon> Submit
+            </paper-button>
+          </div>
+        </form>
+      </paper-material>
+    </div>
+    <!-- vendor scripts -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.0.0/jquery.serialize-object.compiled.js"></script>
+    <!-- app scripts -->
+    <script src="assets/scripts/app.js"></script>
+    <script src="assets/scripts/index.js"></script>
+  </body>
+</html>

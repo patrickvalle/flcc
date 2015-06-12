@@ -1,0 +1,10 @@
+{
+  "name": "flcc",
+  "version": "1.0.0",
+  "dependencies": {
+    "polymer": "Polymer/polymer#~1.0.3",
+    "paper-elements": "PolymerElements/paper-elements#~1.0.1"
+  },
+  "devDependencies": {},
+  "appPath": "public/app"
+}

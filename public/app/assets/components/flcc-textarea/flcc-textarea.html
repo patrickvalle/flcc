@@ -1,0 +1,24 @@
+<dom-module id="flcc-textarea">
+
+  <template>
+    <style>
+      paper-textarea paper-input-container { padding: 2px 0 8px; }
+    </style>
+    <label>[[label]]</label>
+    <paper-textarea required="[[required]]" name="[[name]]" no-label-float="true"></paper-textarea>
+  </template>
+
+  <script>
+    (function() {
+      Polymer({
+        is: 'flcc-textarea',
+        properties: {
+          label: String,
+          required: Boolean,
+          name: String
+        }
+      })
+    })();
+  </script>
+  
+</polymer-element>

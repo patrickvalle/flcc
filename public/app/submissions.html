@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>flcc</title>
+    <meta name="author" content="Patrick Valle">
+    <meta name="viewport" content="width=device-width">
+    <!-- styles -->
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="stylesheet" href="assets/styles/submissions.css">
+    <!-- webcomponent imports -->
+    <link rel="import" href="assets/bower_components/polymer/polymer.html">
+    <link rel="import" href="assets/bower_components/paper-button/paper-button.html">
+    <link rel="import" href="assets/bower_components/paper-dialog/paper-dialog.html">
+    <link rel="import" href="assets/bower_components/paper-material/paper-material.html">
+    <link rel="import" href="assets/bower_components/paper-progress/paper-progress.html">
+    <link rel="import" href="assets/bower_components/paper-styles/paper-styles.html">
+    <link rel="import" href="assets/bower_components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="assets/bower_components/paper-toast/paper-toast.html">
+    <link rel="import" href="assets/bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="assets/components/flcc-header/flcc-header.html">
+    <link rel="import" href="assets/components/flcc-submission/flcc-submission.html">
+    <!-- webcomponents shim -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.3/webcomponents.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body unresolved>
+    <!-- header -->
+    <flcc-header tab-selected="1"></flcc-header>
+    <!-- content -->
+    <div class="content" populated-with="submissions"></div>
+    <!-- vendor scripts -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- app scripts -->
+    <script src="assets/scripts/app.js"></script>
+    <script src="assets/scripts/submissions.js"></script>
+  </body>
+</html>

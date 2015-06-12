@@ -1,0 +1,31 @@
+<dom-module id="flcc-input">
+
+  <template>
+    <style>
+      paper-input paper-input-container { padding: 2px 0 8px; }
+    </style>
+    <label>[[label]]</label>
+    <paper-input required="[[required]]" name="[[name]]" no-label-float="true"></paper-input>
+  </template>
+
+  <script>
+    (function() {
+      Polymer({
+        is: 'flcc-input',
+        properties: {
+          label: String,
+          required: Boolean,
+          name: String,
+          labelRequired: {
+            type: String,
+            computed: 'getLabelRequired(required)'
+          }
+        },
+        getLabelRequired: function(required) {
+          return 'true';
+        }
+      })
+    })();
+  </script>
+  
+</polymer-element>

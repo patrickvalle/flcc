@@ -1,0 +1,13 @@
+label { color: #999; font-size: 0.8em; }
+
+flcc-input,
+flcc-textarea { display: block; margin: 20px 0 0; }
+flcc-input:first-of-type,
+flcc-textarea:first-of-type { margin: 10px 0 0; }
+
+flcc-input[required="true"] label.flcc-input:after { content: ' *'; color: #e64a19; }
+
+.container .buttons { padding: 10px 0 0; text-align: right; position: relative; }
+.container .buttons paper-button { color: #e64a19; text-align: right; }
+
+input.

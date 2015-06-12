@@ -1,0 +1,21 @@
+{
+  "name": "flcc",
+  "version": "1.0.0",
+  "description": "Code challenge",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patrickvalle/flcc.git"
+  },
+  "author": "Patrick Valle <github@patrickvalle.com> (http://www.patrickvalle.com)",
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "express": "^4.12.4",
+    "lodash": "^3.9.3",
+    "mongoose": "^4.0.5",
+    "require-directory": "^2.1.1",
+    "underscore.string": "^3.1.1",
+    "winston": "^1.0.0"
+  },
+  "devDependencies": {}
+}

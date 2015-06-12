@@ -11,7 +11,6 @@ module.exports = function() {
 
   return {
     'server': {
-      'host': process.env.FLCC_SERVER_HOST || 'localhost',
       'port': process.env.FLCC_SERVER_PORT || '3000'
     },
     'api': {

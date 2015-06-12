@@ -62,9 +62,8 @@ var Log = require('./api/app/utilities/Log');
     ErrorResponse.send(response, 500, 'General error encountered.', error.stack);
   });
   // Start server
-  var instance = server.listen(Config.server.port, Config.server.host, function() {
-    var host = instance.address().address;
+  var instance = server.listen(Config.server.port, function() {
     var port = instance.address().port;
-    Log.info('Express server started @ http://%s:%s.', host, port);
+    Log.info('Express server started on port %s.', port);
   });
 }());

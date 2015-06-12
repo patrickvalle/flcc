@@ -17,5 +17,10 @@
     "underscore.string": "^3.1.1",
     "winston": "^1.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "bower": "^1.4.1"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install"
+  }
 }

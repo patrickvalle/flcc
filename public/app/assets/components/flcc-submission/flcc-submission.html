@@ -1,9 +1,14 @@
 <dom-module id="flcc-submission">
 
   <template>
-    <paper-material elevation="1" class="submission container">
-      <h2 class="name">[[fullName]]</h2>
-      <h3 class="email"><a href="[[emailLink]]">[[email]]</a></h2>
+    <paper-material elevation="1" class="submission container" model-id="[[modelId]]">
+      <div class="header left">
+        <h2 class="name" title="[[fullName]]">[[fullName]]</h2>
+        <h3 class="email"><a href="[[emailLink]]" title="[[email]]">[[email]]</a></h3>
+      </div>
+      <div class="header right">
+        <paper-fab mini icon="clear" title="Remove this application" on-tap="onRemove"></paper-fab>
+      </div>
       <div class="questions">
       	<p class="question one">What's the coolest problem you've solved that's applicable to the role you'd like to have with FoodLogiQ? Why should we think it's cool, too?</p>
       	<p class="answer one">[[answerOne]]</p>
@@ -20,6 +25,7 @@
       Polymer({
         is: 'flcc-submission',
         properties: {
+          modelId: String,
         	firstName: String,
         	lastName: String,
         	email: String,
@@ -34,6 +40,9 @@
         		type: String,
         		computed: 'getEmailLink(email)'
         	}
+        },
+        onRemove: function(event) {
+          this.fire('flcc-submission.removed', { 'modelId' : this.modelId });
         },
         getFullName: function(firstName, lastName) {
         	return firstName + ' ' + lastName;

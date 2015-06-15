@@ -5,6 +5,8 @@ body { background: url("../images/background.png"); cursor: default; font-family
 body > .content { display: block; margin: 30px auto; }
 body > .content .container { background: #fff; padding: 20px; }
 
+paper-button { color: #e64a19; text-align: right; }
+
 paper-progress { display: none; position: fixed; top: 0; width: 100%; z-index: 99; }
 paper-progress.paper-progress-0 #activeProgress.paper-progress { background-color: #e64a19; }
 

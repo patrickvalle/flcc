@@ -4,7 +4,7 @@ var Mongoose = require('mongoose');
 
 var Schema = Mongoose.Schema;
 
-var CandidateSchema = new Schema({
+var ApplicationSchema = new Schema({
   name: {
     first: {
       type: String
@@ -33,6 +33,6 @@ var CandidateSchema = new Schema({
   }
 });
 
-var Candidate = Mongoose.model('Candidate', CandidateSchema);
+var Application = Mongoose.model('Application', ApplicationSchema);
 
-module.exports = Candidate;
+module.exports = Application;

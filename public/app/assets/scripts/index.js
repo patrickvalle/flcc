@@ -27,7 +27,7 @@
 			app.loading(true);
 			var formJson = $(form).serializeObject();
 			$.ajax({
-				url: app.candidatesUrl,
+				url: app.applicationsApiUrl,
 				type: 'POST',
 				contentType:'application/json',
 				dataType:'json',

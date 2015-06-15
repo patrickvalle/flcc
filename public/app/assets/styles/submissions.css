@@ -1,7 +1,12 @@
-body > .content .submission { margin-bottom: 20px; }
-body > .content .submission h2,
-body > .content .submission h3 { font-weight: normal; margin: 0; padding: 0; }
-body > .content .submission .email a { color: #3f51b5; text-decoration: none; }
 
-.question { color: #999; font-size: 0.8em; margin: 20px 0 5px; }
-.answer { margin: 0; }
+.flcc-submission { margin-bottom: 20px; }
+.flcc-submission h2,
+.flcc-submission h3 { font-weight: normal; margin: 0; padding: 0; }
+.flcc-submission .email a { color: #3f51b5; text-decoration: none; }
+.flcc-submission paper-fab { background: #e64a19; }
+.flcc-submission .header { margin-bottom: 20px; }
+.flcc-submission .header.left { float: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: calc(100% - 60px); }
+.flcc-submission .header.right { float: right; text-align: right; width: 60px; }
+.flcc-submission .header.right > paper-fab { margin: 0 0 0 auto; position: relative; top: 2px; }
+.flcc-submission .question { color: #999; clear: both; font-size: 0.8em; margin: 20px 0 5px; }
+.flcc-submission .answer { margin: 0; }

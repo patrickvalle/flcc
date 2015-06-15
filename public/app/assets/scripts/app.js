@@ -3,7 +3,7 @@
  */
 var app = (function() {
 
-	var CANDIDATES_URL = '/api/candidates';
+	var APPLICATIONS_API_URL = '/api/applications';
 	var APPLICATION_SUBMITTED_URL = '/submissions.html?submitted';
 
 	/**
@@ -41,7 +41,7 @@ var app = (function() {
 
 	return {
 		applicationSubmitted: applicationSubmitted,
-		candidatesUrl: CANDIDATES_URL,
+		applicationsApiUrl: APPLICATIONS_API_URL,
 		loading: loading,
 		toast: toast
 	};

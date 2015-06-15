@@ -2,12 +2,16 @@
 
 	var DEFAULT_VALUE_IF_NO_DATA = '-';
 
+	var dialogButtonsRegistered = false;
+	var submissionId = false;
+
 	/**
 	 * Gets called on script load
 	 */
 	var initialize = function () {
 		loadSubmissions(function(submissions) {
 			populateSubmissionsInDom(submissions);
+			initializeSubmissionDeleteButtons();
 		});
 	};
 
@@ -17,7 +21,7 @@
 	var loadSubmissions = function(callback) {
 		app.loading(true);
 		$.ajax({
-			url: app.candidatesUrl,
+			url: app.applicationsApiUrl,
 			type: 'GET'
 		}).done(function(response) {
     	callback(response);
@@ -36,6 +40,7 @@
 				for(var i = 0; i < submissions.length; i++) {
 					var submission = submissions[i];
 					var element = document.createElement('flcc-submission');
+					element.setAttribute('model-id', submission._id);
 					element.setAttribute('first-name', submission.name.first);
 					element.setAttribute('last-name', submission.name.last);
 					element.setAttribute('email', submission.email);
@@ -48,6 +53,43 @@
 				}
 			}
 		}
+	};
+
+	/**
+	 * Initializes each delete button within a submission
+	 */
+	var initializeSubmissionDeleteButtons = function() {
+		window.addEventListener('flcc-submission.removed', function(event) {
+			// Set the submission id to be deleted
+			submissionId = event.detail.modelId;
+			// Show the dialog (and register the buttons if they haven't already been)
+			var dialog = document.querySelector('paper-dialog');
+			if(!dialogButtonsRegistered) {
+				var dialogConfirmButton = dialog.querySelector('paper-button[dialog-confirm]');
+				dialogConfirmButton.addEventListener('tap', onRemoveSubmission);
+				dialogButtonsRegistered = true;
+			}
+			dialog.toggle();
+		});
+	};
+
+	/**
+	 * Handler that gets called when the user chooses to remove a submission
+	 */
+	var onRemoveSubmission = function() {
+		app.loading(true);
+		$.ajax({
+			url: app.applicationsApiUrl + '/' + submissionId,
+			type: 'DELETE'
+		}).done(function(response) {
+			// Remove the submission DOM element
+			var submissionDomElement = document.querySelector('flcc-submission[model-id="' + submissionId + '"]');
+			submissionDomElement.parentNode.removeChild(submissionDomElement);
+			// Show a toast
+    	app.toast(response.name.first + ' ' + response.name.last + '\'s submission has been removed.');
+  	}).always(function() {
+			app.loading(false);
+  	});
 	};
 
 	/**
